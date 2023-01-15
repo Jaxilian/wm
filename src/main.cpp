@@ -186,6 +186,7 @@ void on_motion_notify(const XMotionEvent& e) {
 }
 
 void on_key_pressed(const XKeyEvent& e) {
+    printf("%d\n",e.keycode);
     if ((e.state & Mod1Mask) &&
       (e.keycode == XKeysymToKeycode(g_display, XK_F4))) {
     }
@@ -321,6 +322,7 @@ void xl_free(){
 
 
 int main(){
+    printf("---------------------- X LAYER -------------------------\n");
     xl_init();
     xl_listen();
     xl_free();
